@@ -1,22 +1,55 @@
-.App {
+
+/* GENERAL STYLES */
+.html {
+  font-size: 62.5%; /* a trick to scale rem perfectly */
+}
+
+
+/* MOBILE-FIRST STYLES  */
+.navbar {
+  color: black;
+}
+.navbar-brand {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.hidden {
+  display: block;
+}
+.driver-dash-link {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* MEDIA QUERY BREAKPOINTS  */
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+  .driver-dash-link {
+    display: block;
+  }
 }
 
-.App-link {
-  color: #09d3ac;
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .hidden {
+    display: none;
+  }
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  
 }
