@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../logo.png'
 
 class Navbar extends React.Component {
   
