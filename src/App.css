@@ -6,9 +6,10 @@
 
 
 /* MOBILE-FIRST STYLES  */
-.navbar {
-  color: black;
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,0.6);
 }
+
 .navbar-brand {
   display: block;
   text-transform: uppercase;
@@ -20,6 +21,7 @@
 }
 .driver-dash-link {
   display: none;
+  padding: 6px 18px;
 }
 
 
@@ -42,10 +44,16 @@
   .hidden {
     display: none;
   }
+  .navbar {
+    padding: .5rem 4rem;
+  }
   .navbar-brand {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2.5rem;
   }
 }
 
