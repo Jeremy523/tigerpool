@@ -8,31 +8,37 @@ class AdminLogin extends React.Component {
       email: "",
       password: ""
     }
+
+    this.testEmail = "admin@tigerpool.com"
+    this.testPassword = "admin123"
+    this.emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}'
+
+
   }
 
 
-  handleSubmit(e) {
+
+ handleSubmit(e) {
     e.preventDefault();
-    console.log("Submit Clicked")
-    
+    if (RegExp(this.emailValidator).test(this.state.email)){
+        // log when a good email that is not the test email is entered
+        console.log("Submit Clicked but Invalid")
+        if (this.state.email === this.testEmail && this.state.password === this.testPassword){
+            // log when a good email that is the test email is entered
+            console.log("VALID EMAIL")
+        }
+    }
   }
 
   handleChange(e) {
     e.preventDefault()
-    console.log(e.target)
     this.setState({
        [e.target.name] : e.target.value,
     });
-    //console.log(this.state.email + " : " + this.state.password)
   }
   
   
   render() {
-
-    const testEmail = "admin@tigerpool.com"
-    const testPassword = "admin123"
-    let actualEmail = this.state.email
-    let actualPassword = this.state.password
 
     return (
       <div className="upcoming_trips_component">
