@@ -1,20 +1,24 @@
 import React from 'react';
-import AdminLoginButton from './AdminLoginButton'
-import StudentLoginButton from './StudentLoginButton'
+
 
 class LoginPanel extends React.Component{
     render() {
         return(
-        <div class="container">
-            <img src="Car.png"></img>
-            <div>
-                <StudentLoginButton />
-            </div>
+        <div class="login-container">
+            <img className="login-element" src={"car.png"} width="10%"></img>
 
-            <div>
-                <AdminLoginButton />
+            
+            <div className="">
+                <a href="/login" className="btn btn-dark btn-lg login-element">
+                        Student Login
+                </a>            
             </div>
-    </div>
+            <div className="login-element">
+                <a href="/login" className="btn btn-dark btn-sm">
+                        Admin Login
+                </a>
+            </div>            
+        </div>
     )
 }
 }
