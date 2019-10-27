@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.png';
 import './App.css';
 import Navbar from './components/Navbar';
 import LoginPanel from './components/LoginPanel';
+import UpcomingTrips from './components/UpcomingTrips'
+import AdminLogin from './components/AdminLogin';
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       
+      <AdminLogin />
     </div>
   );
 }
