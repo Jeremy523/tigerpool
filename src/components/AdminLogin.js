@@ -19,13 +19,12 @@ class AdminLogin extends React.Component {
  handleSubmit(e) {
     e.preventDefault();
     if (RegExp(this.emailValidator).test(this.state.email)){
-      // log when a good email that is not the test email is entered
-      // console.log("Submit Clicked but Invalid")
       if (this.state.email === this.testEmail && this.state.password === this.testPassword){
-        // log when a good email that is the test email is entered
+        // alert when a good email that is the test email is entered
         alert("Logged in as admin")
       }
       else {
+        // alert when a good email that is not the test email is entered
         alert("Submit clicked, but email is invalid")
       }
     }
