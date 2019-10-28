@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom'
-import ScaleLoader from 'react-spinners/ScaleLoader';
 
 class AdminLogin extends React.Component {
   constructor() {
@@ -9,8 +8,7 @@ class AdminLogin extends React.Component {
     this.state = {
       email: "",
       password: "",
-      isLoggedIn: false,
-      isLoading: true
+      isLoggedIn: false
     }
 
     this.testEmail = "admin@tigerpool.com"
@@ -39,14 +37,6 @@ class AdminLogin extends React.Component {
     });
   }
   
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      })
-    }, 2600)
-  }
-  
   
   render() {
     
@@ -54,42 +44,24 @@ class AdminLogin extends React.Component {
     if ( isLoggedIn === true) {
       return <Redirect to="/admindash" />
     }
-    
-    const { isLoading } = this.state
 
     return (
-      <div className="admin-login-container">
-        {isLoading ? (
-          <div className="loading">
-            <ScaleLoader 
-              sizeUnit={"px"}
-              width={25}
-              height={150}
-              radius={15}
-              margin={'3px'}
-              color={'#E97305'}
-            />
-            <h3>Loading Tigerpool...</h3>
-          </div>
-        ) : (
-          <div className="upcoming_trips_component">
-            <div className="jumbotron">
-              <h1 className="display-4 text-center">Admin Login</h1>
+      <div className="upcoming_trips_component">
+        <div className="jumbotron">
+          <h1 className="display-4 text-center">Admin Login</h1>
+        </div>
+        <form className="w-50 m-3 mx-auto" onSubmit={this.handleSubmit.bind(this)}>
+            <div className="form-group">
+                <label htmlFor="inputEmail">Email address</label>
+                <input name="email" value={this.state.email} onChange={this.handleChange.bind(this)} type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email"></input>
+                <small id="emailHelp" className="form-text text-muted"></small>
             </div>
-            <form className="w-50 m-3 mx-auto" onSubmit={this.handleSubmit.bind(this)}>
-                <div className="form-group">
-                    <label htmlFor="inputEmail">Email address</label>
-                    <input name="email" value={this.state.email} onChange={this.handleChange.bind(this)} type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email"></input>
-                    <small id="emailHelp" className="form-text text-muted"></small>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="inputPassword">Password</label>
-                    <input name="password" value={this.state.password} onChange={this.handleChange.bind(this)} type="password" className="form-control" id="inputPassword" placeholder="Password"></input>
-                </div>
-                <button type="submit" className="btn btn-dark">Submit</button>
-            </form>
-          </div>
-        )}
+            <div className="form-group">
+                <label htmlFor="inputPassword">Password</label>
+                <input name="password" value={this.state.password} onChange={this.handleChange.bind(this)} type="password" className="form-control" id="inputPassword" placeholder="Password"></input>
+            </div>
+            <button type="submit" className="btn btn-dark">Submit</button>
+        </form>
       </div>
     )
   }
