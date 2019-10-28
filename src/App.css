@@ -61,3 +61,22 @@
 @media screen and (min-width: 1200px) {
   
 }
+/*Components*/
+.login-container{
+  display:flex;
+  flex-direction:column;
+  align-content: center;
+  align-items: center;
+  
+}
+
+.login-element{
+  padding-top: 1%;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0; 
+  size:20%;
+} 
+.spacer{
+  padding:5%;
+}
