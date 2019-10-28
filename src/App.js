@@ -4,9 +4,10 @@ import './App.css';
 import Navbar from './components/Navbar';
 import UpcomingTrips from './components/UpcomingTrips'
 import AdminLogin from './components/AdminLogin';
+import AdminDash from './components/AdminDash';
 
 function App() {
-
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route exact path="/adminlogin" component={AdminLogin} />
             <Route exact path="/upcoming" component={UpcomingTrips} />
+            <Route exact path="/admindash" component={AdminDash} />
             <Route component={Page404} />
           </Switch>
         </div>
