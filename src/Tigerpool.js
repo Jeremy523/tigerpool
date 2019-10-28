@@ -6,7 +6,6 @@ import LoginPanel from './components/LoginPanel';
 import Home from './components/Home'
 import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
-import ScaleLoader from 'react-spinners/ScaleLoader';
 
 class Tigerpool extends React.Component {
   constructor() {
@@ -27,12 +26,11 @@ class Tigerpool extends React.Component {
 
   render() {
     
-    // const { Provider, Consumer } = React.createContext()
-    const { isLoading } = this.state
+    // const { isLoading } = this.state
     
     return (
       <div className="tigerpool-container">
-        {isLoading ? (
+        {/* {isLoading ? (
           <div className="loading">
             <ScaleLoader 
               sizeUnit={"px"}
@@ -40,25 +38,25 @@ class Tigerpool extends React.Component {
               height={150}
               radius={15}
               margin={'3px'}
+              color={'#E97305'}
             />
             <h3>Loading Tigerpool...</h3>
           </div>
-        ) : (
-          <BrowserRouter>
-            <Navbar />
-            <div>            
-            <Switch>
-              <Route exact path="/adminlogin" component={AdminLogin} />
-              <Route exact path="/admindash" component={AdminDash} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/login" component={LoginPanel}/>
-              <Route exact path="/" component={LoginPanel}/>
-              <Route component={Page404} />
-            </Switch>
-            </div>            
-            <Footer />
-          </BrowserRouter>
-        )}
+        ) : ( */}
+        <BrowserRouter>
+          <Navbar />
+          <div>            
+          <Switch>
+            <Route exact path="/adminlogin" component={AdminLogin} />
+            <Route exact path="/admindash" component={AdminDash} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/login" component={LoginPanel}/>
+            <Route exact path="/" component={LoginPanel}/>
+            <Route component={Page404} />
+          </Switch>
+          </div>            
+          <Footer />
+        </BrowserRouter>
       </div>
     );
   }
