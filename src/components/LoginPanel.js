@@ -13,11 +13,11 @@ class LoginPanel extends React.Component {
     
     componentDidMount() {
         setTimeout(() => {
-          this.setState({
-            isLoading: false
-          })
+            this.setState({
+                isLoading: false
+            })
         }, 2600)
-      }
+    }
     
     render() {
         
@@ -45,12 +45,12 @@ class LoginPanel extends React.Component {
 
 
                         <div className="login-element">
-                            <Link to="/home" className="btn btn-dark btn-primary btn-lg btn-block login-element">
-                                Student Login
+                            <Link to="/home" className="btn btn-dark btn-lg login-element px-4">
+                                RIT Student Login
                             </Link>
                         </div>
                         <div className="login-element">
-                            <Link to="/adminlogin" className="btn btn-dark btn-sm">
+                            <Link to="/adminlogin" className="btn btn-dark btn-md">
                                 Admin Login
                             </Link>
                         </div>

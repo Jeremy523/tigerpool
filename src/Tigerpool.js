@@ -6,6 +6,7 @@ import LoginPanel from './components/LoginPanel';
 import Home from './components/Home'
 import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
+import TripDetails from './components/TripDetails'
 
 class Tigerpool extends React.Component {
 
@@ -20,6 +21,7 @@ class Tigerpool extends React.Component {
               <Route exact path="/admindash" component={AdminDash} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/login" component={LoginPanel}/>
+              <Route exact path="/trip" component={TripDetails}/>
               <Route exact path="/" component={LoginPanel}/>
               <Route component={Page404} />
             </Switch>
