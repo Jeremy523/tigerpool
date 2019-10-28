@@ -8,7 +8,6 @@ import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 
-
 class Tigerpool extends React.Component {
   constructor() {
     super()
@@ -16,7 +15,6 @@ class Tigerpool extends React.Component {
     this.state = {
       isLoading: true
     }
-    
   }
   
   componentDidMount() {
@@ -24,12 +22,12 @@ class Tigerpool extends React.Component {
       this.setState({
         isLoading: false
       })
-    },2500)
+    }, 2600)
   }
 
   render() {
     
-    const { Provider, Consumer } = React.createContext()
+    // const { Provider, Consumer } = React.createContext()
     const { isLoading } = this.state
     
     return (
@@ -43,7 +41,7 @@ class Tigerpool extends React.Component {
               radius={15}
               margin={'3px'}
             />
-            <h3>Loading...</h3>
+            <h3>Loading Tigerpool...</h3>
           </div>
         ) : (
           <BrowserRouter>

@@ -16,8 +16,6 @@ class AdminLogin extends React.Component {
     this.emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}'
   }
 
-
-
  handleSubmit(e) {
     e.preventDefault();
     if (RegExp(this.emailValidator).test(this.state.email)){
@@ -27,7 +25,6 @@ class AdminLogin extends React.Component {
         });
       }
       else {
-        // alert when a good email that is not the test email is entered
         alert("Submit clicked, but email is invalid")
       }
     }

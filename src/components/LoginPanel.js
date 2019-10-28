@@ -7,7 +7,7 @@ class LoginPanel extends React.Component {
             <div class="login-container">
                 <div className="spacer" />
 
-                <img className="login-element" src={"car.png"} height="10%"></img>
+                <img className="login-element" src={"car.png"}></img>
 
 
                 <div className="login-element">

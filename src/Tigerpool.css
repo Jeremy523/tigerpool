@@ -71,12 +71,12 @@
   flex-direction:column;
   align-content: center;
   align-items: center;
-  
+  height: 87.5vh;
 }
 
 .login-element{
   padding: 5px;
 } 
 .spacer{
-  margin: 3rem;
+  margin: 5rem;
 }
