@@ -11,12 +11,12 @@ class LoginPanel extends React.Component {
 
 
                 <div className="login-element">
-                    <Link to="/upcoming" className="btn btn-dark btn-primary btn-lg btn-block login-element">
+                    <Link to="/home" className="btn btn-dark btn-primary btn-lg btn-block login-element">
                         Student Login
                 </Link>
                 </div>
                 <div className="login-element">
-                    <Link to="/adminLogin" className="btn btn-dark btn-sm">
+                    <Link to="/adminlogin" className="btn btn-dark btn-sm">
                         Admin Login
                 </Link>
                 </div>
