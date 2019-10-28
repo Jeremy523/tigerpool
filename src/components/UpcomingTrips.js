@@ -63,7 +63,7 @@ class UpcomingTrips extends React.Component {
               <p className="card-text"><strong>Spots Open: </strong>{exampleJson['trip1'].spotsOpen}</p>
               <div class="row">
                 <div class="col text-center">
-                  <a href="/trip1" className="btn btn-dark">
+                  <a href="/trip" className="btn btn-dark">
                     View Trip Details
                   </a>
                 </div>
@@ -81,7 +81,7 @@ class UpcomingTrips extends React.Component {
               <p className="card-text"><strong>Spots Open: </strong>{exampleJson['trip2'].spotsOpen}</p>
               <div class="row">
                 <div class="col text-center">
-                  <a href="/trip2" className="btn btn-dark">
+                  <a href="/trip" className="btn btn-dark">
                     View Trip Details
                   </a>
                 </div>
