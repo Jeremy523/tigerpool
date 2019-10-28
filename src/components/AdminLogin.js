@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 
 class AdminLogin extends React.Component {
   constructor() {
@@ -6,7 +7,8 @@ class AdminLogin extends React.Component {
     
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      isLoggedIn: false
     }
 
     this.testEmail = "admin@tigerpool.com"
@@ -20,8 +22,9 @@ class AdminLogin extends React.Component {
     e.preventDefault();
     if (RegExp(this.emailValidator).test(this.state.email)){
       if (this.state.email === this.testEmail && this.state.password === this.testPassword){
-        // alert when a good email that is the test email is entered
-        alert("Logged in as admin")
+        this.setState({
+          isLoggedIn: true
+        });
       }
       else {
         // alert when a good email that is not the test email is entered
@@ -39,6 +42,11 @@ class AdminLogin extends React.Component {
   
   
   render() {
+    
+    const { isLoggedIn } = this.state
+    if ( isLoggedIn === true) {
+      return <Redirect to="/admindash" />
+    }
 
     return (
       <div className="upcoming_trips_component">
