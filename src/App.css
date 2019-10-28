@@ -69,6 +69,14 @@
   align-items: center;
   
 }
+
 .login-element{
-  padding: 1% 0%;    
+  padding-top: 1%;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0; 
+  size:20%;
 } 
+.spacer{
+  padding:5%;
+}

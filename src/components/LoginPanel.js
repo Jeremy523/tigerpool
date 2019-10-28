@@ -1,25 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-
-class LoginPanel extends React.Component{
+class LoginPanel extends React.Component {
     render() {
-        return(
-        <div class="login-container">
-            <img className="login-element" src={"car.png"} width="10%"></img>
+        return (
+            <div class="login-container">
+                <div className="spacer" />
 
-            
-            <div className="">
-                <a href="/login" className="btn btn-dark btn-lg login-element">
+                <img className="login-element" src={"car.png"} height="10%"></img>
+
+
+                <div className="login-element">
+                    <Link to="/upcoming" className="btn btn-dark btn-primary btn-lg btn-block login-element">
                         Student Login
-                </a>            
-            </div>
-            <div className="login-element">
-                <a href="/login" className="btn btn-dark btn-sm">
+                </Link>
+                </div>
+                <div className="login-element">
+                    <Link to="/adminLogin" className="btn btn-dark btn-sm">
                         Admin Login
-                </a>
-            </div>            
-        </div>
-    )
-}
+                </Link>
+                </div>
+            </div>
+        )
+    }
 }
 export default LoginPanel; 
