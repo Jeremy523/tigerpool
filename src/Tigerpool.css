@@ -24,6 +24,10 @@
   padding: 6px 18px;
 }
 
+.loading {
+  padding: 280px 250px;
+  text-align: center;
+}
 
 /* MEDIA QUERY BREAKPOINTS  */
 
@@ -67,16 +71,12 @@
   flex-direction:column;
   align-content: center;
   align-items: center;
-  
+  height: 87.5vh;
 }
 
 .login-element{
-  padding-top: 1%;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0; 
-  size:20%;
+  padding: 5px;
 } 
 .spacer{
-  padding:5%;
+  margin: 5rem;
 }
