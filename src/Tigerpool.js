@@ -8,57 +8,26 @@ import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
 
 class Tigerpool extends React.Component {
-  constructor() {
-    super()
-    
-    this.state = {
-      isLoading: true
-    }
-  }
-  
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      })
-    }, 2600)
-  }
 
   render() {
-    
-    // const { isLoading } = this.state
-    
     return (
-      <div className="tigerpool-container">
-        {/* {isLoading ? (
-          <div className="loading">
-            <ScaleLoader 
-              sizeUnit={"px"}
-              width={25}
-              height={150}
-              radius={15}
-              margin={'3px'}
-              color={'#E97305'}
-            />
-            <h3>Loading Tigerpool...</h3>
-          </div>
-        ) : ( */}
+      <div>
         <BrowserRouter>
           <Navbar />
-          <div>            
-          <Switch>
-            <Route exact path="/adminlogin" component={AdminLogin} />
-            <Route exact path="/admindash" component={AdminDash} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/login" component={LoginPanel}/>
-            <Route exact path="/" component={LoginPanel}/>
-            <Route component={Page404} />
-          </Switch>
+          <div className="tigerpool-container">            
+            <Switch>
+              <Route exact path="/adminlogin" component={AdminLogin} />
+              <Route exact path="/admindash" component={AdminDash} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/login" component={LoginPanel}/>
+              <Route exact path="/" component={LoginPanel}/>
+              <Route component={Page404} />
+            </Switch>
           </div>            
           <Footer />
         </BrowserRouter>
       </div>
-    );
+    )
   }
 }
 
