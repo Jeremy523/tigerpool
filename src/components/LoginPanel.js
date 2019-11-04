@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ScaleLoader from 'react-spinners/ScaleLoader';
+import { Animated } from 'react-animated-css';
 
 class LoginPanel extends React.Component {
     constructor() {
@@ -16,7 +17,7 @@ class LoginPanel extends React.Component {
             this.setState({
                 isLoading: false
             })
-        }, 2600)
+        }, 1000)
     }
     
     render() {
@@ -24,7 +25,7 @@ class LoginPanel extends React.Component {
         const { isLoading } = this.state
         
         return (
-            <div>
+            <Animated animationIn="fadeIn">  
                 {isLoading ? (
                     <div className="loading">
                         <ScaleLoader 
@@ -56,7 +57,7 @@ class LoginPanel extends React.Component {
                         </div>
                     </div>
                 )}
-            </div>
+            </Animated>
         )
     }
 }
