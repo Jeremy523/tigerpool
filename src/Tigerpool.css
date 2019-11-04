@@ -1,9 +1,12 @@
 
 /* GENERAL STYLES */
 .html {
-  font-size: 62.5%; /* a trick to scale rem perfectly */
+  font-size: 62.5%; /* CSS trick to scale rem-to-px ratio perfectly */
 }
 
+.tigerpool-container {
+  
+}
 
 /* MOBILE-FIRST STYLES  */
 .navbar-light .navbar-nav .nav-link {
@@ -29,6 +32,33 @@
   text-align: center;
 }
 
+.trip-details-container {
+  width: 100%;
+  align-items: center;
+}
+
+.trip-details-wrapper {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.trip-logistics, .trip-rules, .trip-cost {
+  margin: 0 auto 0 0;
+}
+
+.trip-details-info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.trip-details-info p {
+  margin: 0;
+}
+
 /* MEDIA QUERY BREAKPOINTS  */
 
 /* Small devices (landscape phones, 576px and up) */
@@ -40,7 +70,20 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-  
+  .table {
+    display: table;
+  }
+  .trip-details-info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  .trip-details-wrapper {
+    max-width: 992px;    
+  }
+  .trip-logistics, .trip-rules, .trip-cost {
+    margin: 0 auto;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -59,11 +102,20 @@
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 2.5rem;
   }
+  .trip-details-wrapper {
+
+  }
+  .trip-details-info {
+    /* justify-content: space-evenly; */
+  }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
-  
+  .table {
+    max-width: 800px;
+  }
 }
 /*Components*/
 .login-container{

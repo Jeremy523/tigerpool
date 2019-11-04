@@ -39,9 +39,9 @@ class LoginPanel extends React.Component {
                     </div>
                 ) : (
                     <div class="login-container">
-                        <div className="spacer" />
+                        <div className="m-5" />
 
-                        <img className="login-element" src={"car.png"}></img>
+                        <img className="p-5" src={"car.png"}></img>
 
 
                         <div className="login-element">

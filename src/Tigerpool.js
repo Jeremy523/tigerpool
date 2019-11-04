@@ -22,7 +22,7 @@ class Tigerpool extends React.Component {
               <Route exact path="/home" component={Home} />
               <Route exact path="/login" component={LoginPanel}/>
               <Route exact path="/trip" component={TripDetails}/>
-              <Route exact path="/" component={LoginPanel}/>
+              <Route exact path="/" component={Home}/>
               <Route component={Page404} />
             </Switch>
           <Footer />

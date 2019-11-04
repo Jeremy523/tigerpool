@@ -1,14 +1,6 @@
 import React from 'react';
 
-class UpcomingTrips extends React.Component {
-  constructor() {
-    super()
-    
-    this.state = {
-      
-    }
-  }
-  
+class UpcomingTrips extends React.Component {  
   
   render() {
     
