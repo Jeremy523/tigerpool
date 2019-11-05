@@ -1,10 +1,12 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom'
 
+import auth from '../utils/auth';
+
 class AdminLogin extends React.Component {
   constructor() {
     super()
-    
+
     this.state = {
       email: "",
       password: "",
@@ -16,10 +18,10 @@ class AdminLogin extends React.Component {
     this.emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}'
   }
 
- handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    if (RegExp(this.emailValidator).test(this.state.email)){
-      if (this.state.email === this.testEmail && this.state.password === this.testPassword){
+    if (RegExp(this.emailValidator).test(this.state.email)) {
+      if (this.state.email === this.testEmail && this.state.password === this.testPassword) {
         this.setState({
           isLoggedIn: true
         });
@@ -33,15 +35,17 @@ class AdminLogin extends React.Component {
   handleChange(e) {
     e.preventDefault()
     this.setState({
-       [e.target.name] : e.target.value,
+      [e.target.name]: e.target.value,
     });
   }
-  
-  
+
+
   render() {
-    
+
     const { isLoggedIn } = this.state
-    if ( isLoggedIn === true) {
+    if (isLoggedIn === true) {
+      auth.setToken('TEST_TOKEN', false);
+      auth.setUserInfo('TEST_USER', false);
       return <Redirect to="/admindash" />
     }
 
@@ -51,16 +55,16 @@ class AdminLogin extends React.Component {
           <h1 className="display-4 text-center">Admin Login</h1>
         </div>
         <form className="w-50 m-3 mx-auto" onSubmit={this.handleSubmit.bind(this)}>
-            <div className="form-group">
-                <label htmlFor="inputEmail">Email address</label>
-                <input name="email" value={this.state.email} onChange={this.handleChange.bind(this)} type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email"></input>
-                <small id="emailHelp" className="form-text text-muted"></small>
-            </div>
-            <div className="form-group">
-                <label htmlFor="inputPassword">Password</label>
-                <input name="password" value={this.state.password} onChange={this.handleChange.bind(this)} type="password" className="form-control" id="inputPassword" placeholder="Password"></input>
-            </div>
-            <button type="submit" className="btn btn-dark">Submit</button>
+          <div className="form-group">
+            <label htmlFor="inputEmail">Email address</label>
+            <input name="email" value={this.state.email} onChange={this.handleChange.bind(this)} type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email"></input>
+            <small id="emailHelp" className="form-text text-muted"></small>
+          </div>
+          <div className="form-group">
+            <label htmlFor="inputPassword">Password</label>
+            <input name="password" value={this.state.password} onChange={this.handleChange.bind(this)} type="password" className="form-control" id="inputPassword" placeholder="Password"></input>
+          </div>
+          <button type="submit" className="btn btn-dark">Submit</button>
         </form>
       </div>
     )

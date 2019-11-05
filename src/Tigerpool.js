@@ -8,30 +8,38 @@ import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
 import TripDetails from './components/TripDetails'
 import { Animated } from "react-animated-css";
+import PrivateRoute from './components/PrivateRouter';
 
 class Tigerpool extends React.Component {
+
+  fakeAuth = {
+    isAuthenticated: false
+  };
 
   render() {
     return (
       <Animated animationIn="fadeIn">
         <BrowserRouter>
           <Navbar />
-          <div className="tigerpool-container">            
+          <div className="tigerpool-container">
             <Switch>
               <Route exact path="/adminlogin" component={AdminLogin} />
-              <Route exact path="/admindash" component={AdminDash} />
+              <PrivateRoute path="/admindash">
+                <AdminDash />
+              </PrivateRoute>
               <Route exact path="/home" component={Home} />
-              <Route exact path="/login" component={LoginPanel}/>
-              <Route exact path="/trip" component={TripDetails}/>
-              <Route exact path="/" component={Home}/>
+              <Route exact path="/login" component={LoginPanel} />
+              <Route exact path="/trip" component={TripDetails} />
+              <Route exact path="/" component={Home} />
               <Route component={Page404} />
             </Switch>
-          <Footer />
-          </div>            
+            <Footer />
+          </div>
         </BrowserRouter>
       </Animated>
     )
   }
+
 }
 
 function Page404() {
