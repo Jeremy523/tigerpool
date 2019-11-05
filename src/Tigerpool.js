@@ -7,12 +7,13 @@ import Home from './components/Home'
 import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
 import TripDetails from './components/TripDetails'
+import { Animated } from "react-animated-css";
 
 class Tigerpool extends React.Component {
 
   render() {
     return (
-      <div>
+      <Animated animationIn="fadeIn">
         <BrowserRouter>
           <Navbar />
           <div className="tigerpool-container">            
@@ -22,13 +23,13 @@ class Tigerpool extends React.Component {
               <Route exact path="/home" component={Home} />
               <Route exact path="/login" component={LoginPanel}/>
               <Route exact path="/trip" component={TripDetails}/>
-              <Route exact path="/" component={LoginPanel}/>
+              <Route exact path="/" component={Home}/>
               <Route component={Page404} />
             </Switch>
           <Footer />
           </div>            
         </BrowserRouter>
-      </div>
+      </Animated>
     )
   }
 }
