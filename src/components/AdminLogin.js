@@ -44,8 +44,8 @@ class AdminLogin extends React.Component {
 
     const { isLoggedIn } = this.state
     if (isLoggedIn === true) {
-      auth.setToken('TEST_TOKEN', false);
-      auth.setUserInfo('TEST_USER', false);
+      auth.setToken('ADMIN_TOKEN', false);
+      auth.setUserInfo('ADMIN', false);
       return <Redirect to="/admindash" />
     }
 
