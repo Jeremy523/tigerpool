@@ -8,6 +8,8 @@ import AdminLogin from './components/AdminLogin';
 import AdminDash from './components/AdminDash';
 import TripDetails from './components/TripDetails'
 import RideSearch from './components/RideSearch'
+import RateDriver from './pages/RateDriver';
+import Success from './pages/Success';
 import { Animated } from "react-animated-css";
 
 class Tigerpool extends React.Component {
@@ -22,10 +24,13 @@ class Tigerpool extends React.Component {
               <Route exact path="/adminlogin" component={AdminLogin} />
               <Route exact path="/admindash" component={AdminDash} />
               <Route exact path="/home" component={Home} />
-              <Route exact path="/login" component={LoginPanel}/>
-              <Route exact path="/trip" component={TripDetails}/>
               <Route exact path="/search" component={RideSearch}/>
 
+              <Route exact path="/login" component={LoginPanel} />
+              <Route exact path="/trip" component={TripDetails} />
+              <Route exact path="/rate" component={RateDriver} />
+                {/* <Route path="/:success" component={Success}/>
+              </Route> */}
               <Route exact path="/" component={Home}/>
               <Route component={Page404} />
             </Switch>
