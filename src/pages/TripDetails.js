@@ -1,4 +1,5 @@
 import React from 'react'
+import TripTable from '../components/Table'
 
 class TripDetails extends React.Component {
   
@@ -46,7 +47,6 @@ class TripDetails extends React.Component {
         "destination": "Staten Island, NY",
         "accepted": "Yes"
       },
-      
     }
     
     return(
@@ -76,7 +76,8 @@ class TripDetails extends React.Component {
               <p><strong>Total Cost: </strong>$30</p>            
             </div>
           </div>
-          <table class="table table-responsive table-hover">
+          <TripTable />
+          {/* <table class="table table-responsive table-hover">
             <thead className="thead-light">
               <tr>
                 <th scope="col">Name</th>
@@ -121,7 +122,7 @@ class TripDetails extends React.Component {
                 <td>{riders[4].accepted}</td>
               </tr>
             </tbody>
-          </table>
+          </table> */}
         </div>        
       </div>
     )
