@@ -9,6 +9,7 @@ import StudentLogin from './pages/StudentLogin';
 import AdminDash from './pages/AdminDash';
 import TripDetails from './pages/TripDetails';
 import RateDriver from './pages/RateDriver';
+import ViewRequests from './pages/ViewRequests';
 import Success from './pages/Success';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
@@ -36,6 +37,9 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
+              </PrivateRoute>
+              <PrivateRoute roles={["driver"]} path="/ride-requests-1">
+                <ViewRequests />
               </PrivateRoute>
               <Route component={Page404} />
             </Switch>
