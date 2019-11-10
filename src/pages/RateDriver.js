@@ -1,5 +1,5 @@
 import React from 'react'
-import Larry from './LarryProfile'
+import Larry from '../components/Larry'
 
 const RateDriver = () => {
   return (

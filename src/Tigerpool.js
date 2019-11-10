@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './Tigerpool.css';
-import Navbar from './components/Navbar';
-import LoginPanel from './components/LoginPanel';
-import Home from './components/Home'
-import AdminLogin from './components/AdminLogin';
-import StudentLogin from './components/StudentLogin';
-import AdminDash from './components/AdminDash';
-import TripDetails from './components/TripDetails';
-import RateDriver from './components/RateDriver';
-import Success from './components/Success';
+import Navbar from './pages/Navbar';
+import LoginPanel from './pages/LoginPanel';
+import Home from './pages/Home'
+import AdminLogin from './pages/AdminLogin';
+import StudentLogin from './pages/StudentLogin';
+import AdminDash from './pages/AdminDash';
+import TripDetails from './pages/TripDetails';
+import RateDriver from './pages/RateDriver';
+import Success from './pages/Success';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
 
@@ -25,6 +25,9 @@ class Tigerpool extends React.Component {
               <Route exact path="/login" component={LoginPanel} />
               <Route exact path="/adminlogin" component={AdminLogin} />
               <Route exact path="/studentlogin" component={StudentLogin} />
+              <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
+                <Home />
+              </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} path="/trip">
                 <TripDetails />
               </PrivateRoute>
@@ -33,9 +36,6 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
-              </PrivateRoute>
-              <PrivateRoute roles={["rider", "driver"]} path="/">
-                <Home />
               </PrivateRoute>
               <Route component={Page404} />
             </Switch>
@@ -53,7 +53,7 @@ function Page404() {
     <div className='alert alert-danger' role='alert'>
       <p className='my-auto'>No page here - try
       <Link className='alert-link' to='/adminlogin'> /adminlogin </Link>or
-      <Link className='alert-link' to='/home'> /home</Link>
+      <Link className='alert-link' to='/'> /</Link>
       </p>
     </div>
   );
