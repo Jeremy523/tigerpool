@@ -38,7 +38,7 @@ const TripTable = () => {
   }
   
   return (
-    <table class="table table-responsive table-hover">
+    <table className="table table-responsive table-hover text-center">
       <thead className="thead-light">
         <tr>
           <th scope="col">Name</th>

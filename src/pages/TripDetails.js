@@ -1,5 +1,5 @@
 import React from 'react'
-import TripTable from '../components/Table'
+import Table from '../components/Table'
 
 class TripDetails extends React.Component {
   
@@ -41,7 +41,7 @@ class TripDetails extends React.Component {
               <p><strong>Total Cost: </strong>$30</p>            
             </div>
           </div>
-          <TripTable />
+          <Table />
         </div>        
       </div>
     )
