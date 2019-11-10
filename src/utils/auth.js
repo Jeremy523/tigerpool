@@ -2,11 +2,44 @@ import { isEmpty } from 'lodash';
 
 const TOKEN_KEY = 'jwtToken';
 const USER_INFO = 'userInfo';
+const ADMIN = 'ADMIN';
+const RIDER = 'RIDER';
+const DRIVER = 'DRIVER';
 
 const parse = JSON.parse;
 const stringify = JSON.stringify;
 
 const auth = {
+  loginAsRider() {
+    auth.loginAsRole(RIDER);
+  },
+
+  loginAsDriver() {
+    auth.loginAsRole(DRIVER);
+  },
+
+  loginAsAdmin() {
+    auth.loginAsRole(ADMIN);
+  },
+
+  loginAsRole(role) {
+    auth.clearAppStorage();
+    const token = `${role}_TOKEN`
+    auth.setToken(token, false, token);
+  },
+
+  // takes in array of valid roles for route, searches if user
+  // is logged in as any one of them
+  isLoggedInAs(roles) {
+    for (let role of roles) {
+      role = role.toUpperCase();
+      if (auth.getToken(`${role}_TOKEN`))
+        return true;
+    }
+    return false;
+  },
+
+  // ---------------------------------------------------
   /**
    * Remove an item from the used storage
    * @param  {String} key [description]

@@ -4,11 +4,14 @@ import { Redirect, Route } from 'react-router-dom';
 // Utils
 import auth from '../utils/auth';
 
-const PrivateRoute = ({ children, ...rest }) => (
+/**
+ * @param {Array} roles valid roles for given route
+ */
+const PrivateRoute = ({ children, roles: roles, ...rest }) => (
   <Route
     {...rest}
     render={({ location }) =>
-      auth.getToken() !== null ? (
+      auth.isLoggedInAs(roles) ? (
         children
       ) : (
           <Redirect

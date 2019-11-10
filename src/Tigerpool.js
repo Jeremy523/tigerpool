@@ -5,18 +5,15 @@ import Navbar from './components/Navbar';
 import LoginPanel from './components/LoginPanel';
 import Home from './components/Home'
 import AdminLogin from './components/AdminLogin';
+import StudentLogin from './components/StudentLogin';
 import AdminDash from './components/AdminDash';
 import TripDetails from './components/TripDetails';
 import RateDriver from './components/RateDriver';
 import Success from './components/Success';
 import { Animated } from "react-animated-css";
-import PrivateRoute from './components/PrivateRouter';
+import PrivateRoute from './components/PrivateRoute';
 
 class Tigerpool extends React.Component {
-
-  fakeAuth = {
-    isAuthenticated: false
-  };
 
   render() {
     return (
@@ -25,17 +22,21 @@ class Tigerpool extends React.Component {
           <Navbar />
           <div className="tigerpool-container">
             <Switch>
+              <Route exact path="/login" component={LoginPanel} />
               <Route exact path="/adminlogin" component={AdminLogin} />
-              <PrivateRoute path="/admindash">
+              <Route exact path="/studentlogin" component={StudentLogin} />
+              <PrivateRoute roles={["rider", "driver"]} path="/trip">
+                <TripDetails />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider"]} path="/rate">
+                <RateDriver />
+              </PrivateRoute>
+              <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
               </PrivateRoute>
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/login" component={LoginPanel} />
-              <Route exact path="/trip" component={TripDetails} />
-              <Route exact path="/rate" component={RateDriver} />
-              {/* <Route path="/:success" component={Success}/>
-              </Route> */}
-              <Route exact path="/" component={Home} />
+              <PrivateRoute roles={["rider", "driver"]} path="/">
+                <Home />
+              </PrivateRoute>
               <Route component={Page404} />
             </Switch>
             <Footer />
