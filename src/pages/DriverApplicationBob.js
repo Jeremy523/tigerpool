@@ -1,8 +1,8 @@
 import React from 'react'
-import Larry from '../components/Larry'
+import Bob from '../components/Bob'
 import Table from '../components/Table'
 
-const RateDriver = () => {
+const DriverApplicationBob = () => {
   return (
     <div className="container">
 	  
@@ -10,7 +10,7 @@ const RateDriver = () => {
         <div className="trip-details-wrapper">
           <div className="trip-details-info">
             <div className="trip-logistics mb-4" style={{'margin-top':'40px'}}>
-              <Larry />
+              <Bob />
             </div>
 
           </div>
@@ -44,4 +44,4 @@ const RateDriver = () => {
   )
 }
 
-export default RateDriver
+export default DriverApplicationBob
