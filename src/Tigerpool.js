@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './Tigerpool.css';
-import Navbar from './pages/Navbar';
+import Navbar from './components/Navbar';
 import LoginPanel from './pages/LoginPanel';
 import Home from './pages/Home'
 import AdminLogin from './pages/AdminLogin';
