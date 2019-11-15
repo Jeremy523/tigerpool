@@ -13,6 +13,7 @@ import ViewRequests from './pages/ViewRequests';
 import Success from './pages/Success';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
+import RegisterDriver from './pages/RegisterDriver';
 
 class Tigerpool extends React.Component {
 
@@ -28,6 +29,9 @@ class Tigerpool extends React.Component {
               <Route exact path="/studentlogin" component={StudentLogin} />
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
                 <Home />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider"]} path="/register">
+                <RegisterDriver />
               </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} path="/trip">
                 <TripDetails />
