@@ -33,7 +33,7 @@ class RideSearch extends React.Component {
         return (
             <div className="loginContainer">
                 <div className="jumbotron text-center">
-                    <h1>
+                    <h1 className="display-4">
                         Find Trip
                     </h1>
                 </div>
@@ -62,7 +62,7 @@ class RideSearch extends React.Component {
                         <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39237.99028693614!2d-77.67252117661!3d43.07809800287481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d14c603a147e55%3A0xbe7eb31ed5e22c03!2sRochester%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1573345631275!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></Iframe>
                     </div>
                     <div className="search-items">
-                        <div className="login-element search">
+                        <div className="search">
                             <div>
                                 <div class="input-group mb-3 input-group-lg">
                                     <input type="time" class="form-control" required value={this.state.startTime} onChange={e => this.handleTimeChange(e.currentTarget.value)} aria-describedby="basic-addon1" />
