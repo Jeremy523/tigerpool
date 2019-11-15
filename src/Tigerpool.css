@@ -152,3 +152,6 @@
 .search-items{
   flex-basis:20%;
 }
+.icon{
+  object-fit: contain;
+}

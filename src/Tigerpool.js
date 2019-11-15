@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './Tigerpool.css';
-import Navbar from './components/Navbar';
-import LoginPanel from './components/LoginPanel';
-import Home from './components/Home'
-import AdminLogin from './components/AdminLogin';
-import AdminDash from './components/AdminDash';
-import TripDetails from './components/TripDetails'
-import RideSearch from './components/RideSearch'
+import Navbar from './pages/Navbar';
+import LoginPanel from './pages/LoginPanel';
+import Home from './pages/Home'
+import AdminLogin from './pages/AdminLogin';
+import AdminDash from './pages/AdminDash';
+import TripDetails from './pages/TripDetails'
+import RideSearch from './pages/RideSearch'
 import RateDriver from './pages/RateDriver';
 import Success from './pages/Success';
 import { Animated } from "react-animated-css";
