@@ -150,7 +150,7 @@
     height: 50vh;
   }
 }
-/*Components*/
+/* Components */
 .login-container{
   display:flex;
   flex-direction:column;
@@ -164,4 +164,17 @@
 } 
 .spacer{
   margin: 5rem;
+}
+
+.search{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly ;
+
+}
+.search-items{
+  flex-basis:20%;
+}
+.icon{
+  object-fit: contain;
 }

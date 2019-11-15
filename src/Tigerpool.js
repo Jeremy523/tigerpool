@@ -1,19 +1,21 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './Tigerpool.css';
-import Navbar from './pages/Navbar';
+import Navbar from './components/Navbar';
 import LoginPanel from './pages/LoginPanel';
 import Home from './pages/Home'
 import AdminLogin from './pages/AdminLogin';
 import StudentLogin from './pages/StudentLogin';
 import AdminDash from './pages/AdminDash';
-import TripDetails from './pages/TripDetails';
+import TripDetails from './pages/TripDetails'
+import RideSearch from './pages/RideSearch'
 import RateDriver from './pages/RateDriver';
 import ViewRequests from './pages/ViewRequests';
 import Success from './pages/Success';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
 import DriverApplication from './pages/DriverApplication';
+import DriverDash from './pages/DriverDash';
 
 class Tigerpool extends React.Component {
 
@@ -27,6 +29,9 @@ class Tigerpool extends React.Component {
               <Route exact path="/login" component={LoginPanel} />
               <Route exact path="/adminlogin" component={AdminLogin} />
               <Route exact path="/studentlogin" component={StudentLogin} />
+              <PrivateRoute roles={["rider", "driver"]} exact strict path="/search">
+                <RideSearch />
+              </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
                 <Home />
               </PrivateRoute>
@@ -38,6 +43,9 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
+              </PrivateRoute>
+              <PrivateRoute roles={["driver", "rider"]} path="/driverdash">
+                <DriverDash />
               </PrivateRoute>
               <PrivateRoute roles={["driver"]} path="/ride-requests-1">
                 <ViewRequests />
