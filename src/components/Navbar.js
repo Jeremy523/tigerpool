@@ -34,7 +34,7 @@ class Navbar extends React.Component {
               </li>
               <li className="nav-item">
                 <Link to="/driverdash" className="btn btn-dark driver-dash-link">
-                  Driver Dash
+                  Dashboard
                 </Link>
               </li>
             </ul>
