@@ -27,6 +27,9 @@ class Tigerpool extends React.Component {
               <Route exact path="/login" component={LoginPanel} />
               <Route exact path="/adminlogin" component={AdminLogin} />
               <Route exact path="/studentlogin" component={StudentLogin} />
+              <PrivateRoute roles={["rider", "driver"]} exact strict path="/search">
+                <RideSearch />
+              </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
                 <Home />
               </PrivateRoute>
