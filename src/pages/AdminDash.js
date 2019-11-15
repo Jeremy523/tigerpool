@@ -51,7 +51,7 @@ class AdminDash extends React.Component {
 			  
               <div class="row">
                 <div class="col text-center">
-                  <a href="/user1" className="btn btn-dark">
+                  <a href="/larry-app" className="btn btn-dark">
                     View User Details
                   </a>
                 </div>
@@ -75,7 +75,7 @@ class AdminDash extends React.Component {
 			  
               <div class="row">
                 <div class="col text-center">
-                  <a href="/user2" className="btn btn-dark">
+                  <a href="/admindash" className="btn btn-dark">
                     View User Details
                   </a>
                 </div>
