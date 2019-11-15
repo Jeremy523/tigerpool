@@ -13,6 +13,7 @@ import ViewRequests from './pages/ViewRequests';
 import Success from './pages/Success';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
+import DriverDash from './pages/DriverDash';
 
 class Tigerpool extends React.Component {
 
@@ -37,6 +38,9 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
+              </PrivateRoute>
+              <PrivateRoute roles={["driver", "rider"]} path="/driverdash">
+                <DriverDash />
               </PrivateRoute>
               <PrivateRoute roles={["driver"]} path="/ride-requests-1">
                 <ViewRequests />
