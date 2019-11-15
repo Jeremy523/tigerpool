@@ -3,33 +3,56 @@ import { Redirect } from 'react-router-dom'
 
 import auth from '../utils/auth';
 
-class AdminLogin extends React.Component {
+class StudentLogin extends React.Component {
   constructor() {
     super()
 
     this.state = {
       email: "",
       password: "",
-      isLoggedIn: false
-    }
+      isLoggedInRider: false,
+      isLoggedInDriver: false
+    };
 
-    this.testEmail = "admin@tigerpool.com"
-    this.testPassword = "admin123"
-    this.emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}'
+    this.testRider = {
+      email: "rider@rit.edu",
+      password: "rider123"
+    };
+
+    this.testDriver = {
+      email: "driver@rit.edu",
+      password: "driver123"
+    };
+
+    this.emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}';
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (RegExp(this.emailValidator).test(this.state.email)) {
-      if (this.state.email === this.testEmail && this.state.password === this.testPassword) {
+    const { email, password } = this.state;
+    if (RegExp(this.emailValidator).test(email)) {
+      if (this.matchesRider(email, password)) {
         this.setState({
-          isLoggedIn: true
+          isLoggedInRider: true
+        });
+      }
+      else if (this.matchesDriver(email, password)) {
+        this.setState({
+          isLoggedInDriver: true
         });
       }
       else {
         alert("Submit clicked, but email is invalid")
       }
     }
+  }
+
+  matchesRider(email, password) {
+    return email === this.testRider.email && password === this.testRider.password;
+  }
+
+  matchesDriver(email, password) {
+    return email === this.testDriver.email && password === this.testDriver.password;
   }
 
   handleChange(e) {
@@ -39,19 +62,20 @@ class AdminLogin extends React.Component {
     });
   }
 
-
   render() {
-
-    const { isLoggedIn } = this.state
-    if (isLoggedIn === true) {
-      auth.loginAsAdmin();
-      return <Redirect to="/admindash" />
+    const { isLoggedInDriver, isLoggedInRider } = this.state;
+    if (isLoggedInDriver || isLoggedInRider) {
+      if (isLoggedInDriver)
+        auth.loginAsDriver();
+      else if (isLoggedInRider)
+        auth.loginAsRider();
+      return <Redirect to="/" />
     }
 
     return (
       <div className="upcoming_trips_component">
         <div className="jumbotron">
-          <h1 className="display-4 text-center">Admin Login</h1>
+          <h1 className="display-4 text-center">Student Login</h1>
         </div>
         <form className="w-50 m-3 mx-auto" onSubmit={this.handleSubmit.bind(this)}>
           <div className="form-group">
@@ -70,4 +94,4 @@ class AdminLogin extends React.Component {
   }
 }
 
-export default AdminLogin;
+export default StudentLogin;

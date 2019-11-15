@@ -5,12 +5,15 @@ import Navbar from './pages/Navbar';
 import LoginPanel from './pages/LoginPanel';
 import Home from './pages/Home'
 import AdminLogin from './pages/AdminLogin';
+import StudentLogin from './pages/StudentLogin';
 import AdminDash from './pages/AdminDash';
 import TripDetails from './pages/TripDetails'
 import RideSearch from './pages/RideSearch'
 import RateDriver from './pages/RateDriver';
+import ViewRequests from './pages/ViewRequests';
 import Success from './pages/Success';
 import { Animated } from "react-animated-css";
+import PrivateRoute from './components/PrivateRoute';
 
 class Tigerpool extends React.Component {
 
@@ -19,27 +22,35 @@ class Tigerpool extends React.Component {
       <Animated animationIn="fadeIn">
         <BrowserRouter>
           <Navbar />
-          <div className="tigerpool-container">            
+          <div className="tigerpool-container">
             <Switch>
-              <Route exact path="/adminlogin" component={AdminLogin} />
-              <Route exact path="/admindash" component={AdminDash} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/search" component={RideSearch}/>
-
               <Route exact path="/login" component={LoginPanel} />
-              <Route exact path="/trip" component={TripDetails} />
-              <Route exact path="/rate" component={RateDriver} />
-                {/* <Route path="/:success" component={Success}/>
-              </Route> */}
-              <Route exact path="/" component={Home}/>
+              <Route exact path="/adminlogin" component={AdminLogin} />
+              <Route exact path="/studentlogin" component={StudentLogin} />
+              <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
+                <Home />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider", "driver"]} path="/trip">
+                <TripDetails />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider"]} path="/rate">
+                <RateDriver />
+              </PrivateRoute>
+              <PrivateRoute roles={["admin"]} path="/admindash">
+                <AdminDash />
+              </PrivateRoute>
+              <PrivateRoute roles={["driver"]} path="/ride-requests-1">
+                <ViewRequests />
+              </PrivateRoute>
               <Route component={Page404} />
             </Switch>
-          <Footer />
-          </div>            
+            <Footer />
+          </div>
         </BrowserRouter>
       </Animated>
     )
   }
+
 }
 
 function Page404() {
@@ -47,7 +58,7 @@ function Page404() {
     <div className='alert alert-danger' role='alert'>
       <p className='my-auto'>No page here - try
       <Link className='alert-link' to='/adminlogin'> /adminlogin </Link>or
-      <Link className='alert-link' to='/home'> /home</Link>
+      <Link className='alert-link' to='/'> /</Link>
       </p>
     </div>
   );
