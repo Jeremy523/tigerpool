@@ -62,7 +62,7 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <Route component={Page404} />
             </Switch>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </Animated>
