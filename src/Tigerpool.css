@@ -90,9 +90,24 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  align-items: center;
   max-width: 992px;
   margin: auto;
+}
+
+.rate-driver-content {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.success-component {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding-bottom: 20rem;
 }
 
 .card-img-top {
@@ -100,7 +115,11 @@
 }
 
 .star {
-  fill: yellow;
+  color: #F6CF00;
+}
+
+.no-star {
+  color: #C4C4C4;
 }
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Larry from '../components/Larry'
+import { Link } from 'react-router-dom'
 
 const RateDriver = () => {
   return (
@@ -11,11 +12,17 @@ const RateDriver = () => {
         <div className="rate-driver-wrapper">
           <Larry />
           <div className="rate-driver-content">
-            <span><i className="material-icons star">star_border</i></span>
-            <span><i className="material-icons star">star_border</i></span>
-            <span><i className="material-icons star">star_border</i></span>
-            <span><i className="material-icons star">star_border</i></span>
-            <span><i className="material-icons">star_border</i></span>
+            <div className="rate-driver-stars">
+              <span><i className="material-icons star">star</i></span>
+              <span><i className="material-icons star">star</i></span>
+              <span><i className="material-icons star">star</i></span>
+              <span><i className="material-icons star">star</i></span>
+              <span><i className="material-icons no-star">star</i></span>
+            </div>
+            <input type="textarea" />
+            <Link to="/success" className="btn btn-dark btn-md">
+              Submit
+            </Link>
           </div>
         </div>
       </div>
