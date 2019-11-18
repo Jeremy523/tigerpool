@@ -2,6 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      showNotification: false
+    }
+  }
+  
+  componentDidMount() {
+    setTimeout(() => {
+        this.setState({
+            showNotification: true
+        })
+    }, 3000)
+}
 
   render() {
     return (
@@ -31,6 +45,11 @@ class Navbar extends React.Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/notifications">Notifications</Link>
+                {this.state.showNotification ? 
+                  <div className="">Test</div>
+                :
+                  <div className="hidden">Test</div>
+                }
               </li>
               <li className="nav-item">
                 <Link to="/driverdash" className="btn btn-dark driver-dash-link">
