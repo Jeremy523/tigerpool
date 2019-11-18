@@ -45,11 +45,11 @@ class Navbar extends React.Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/notifications">Notifications</Link>
-                {this.state.showNotification ? 
+                {/* {this.state.showNotification ? 
                   <div className="">Test</div>
                 :
                   <div className="hidden">Test</div>
-                }
+                } */}
               </li>
               <li className="nav-item">
                 <Link to="/driverdash" className="btn btn-dark driver-dash-link">
