@@ -4,7 +4,10 @@ import Larry from '../components/Larry'
 const RateDriver = () => {
   return (
     <div className="container">
-      <Larry />
+      <div className="rate-driver-wrapper">
+        <Larry />
+        
+      </div>
     </div>
   )
 }
