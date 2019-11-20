@@ -49,13 +49,13 @@ class SearchResults extends React.Component {
               "spotsOpen": "1/4"
             }
           }
-        return (
-            <div className="loginContainer">
-                <div className="jumbotron text-center">
+        return (<div>
+            <div className="jumbotron text-center">
                     <h1 className="display-4">
                         Search Results
                     </h1>
-                </div>
+            </div>
+            <div className="container">    
                 <div>
                     <div className="card text-left w-75 m-3 mx-auto">
                         <h1 className="card-header"><strong>Trip: </strong>{exampleJson['trip1'].tripID}</h1>
@@ -69,7 +69,7 @@ class SearchResults extends React.Component {
                                 <div class="col text-center">
                                     <a href="/trip" className="btn btn-dark">
                                         View Trip Details
-                  </a>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ class SearchResults extends React.Component {
                                 <div class="col text-center">
                                     <a href="/trip" className="btn btn-dark">
                                         View Trip Details
-                  </a>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -95,6 +95,7 @@ class SearchResults extends React.Component {
 
                 </div>
             </div>
+        </div>
         )
     }
 }
