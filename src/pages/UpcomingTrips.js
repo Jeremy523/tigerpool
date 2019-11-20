@@ -31,7 +31,7 @@ class UpcomingTrips extends React.Component {
         <div className="container">
           <div class="row">
             <div class="col text-center mb-3">
-              <a href='/listings' className="btn btn-dark">
+              <a href='/search' className="btn btn-dark">
                 Find New Ride
               </a>
             </div>

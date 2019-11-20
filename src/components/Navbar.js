@@ -24,7 +24,7 @@ class Navbar extends React.Component {
               <Link className="nav-link hidden" to="/notifications">Notifications</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link hidden" to="/dashboard">Driver Dash</Link>
+              <Link className="nav-link hidden" to="/driverdash">Dashboard</Link>
             </li>
           </ul>
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
@@ -33,8 +33,8 @@ class Navbar extends React.Component {
                 <Link className="nav-link" to="/notifications">Notifications</Link>
               </li>
               <li className="nav-item">
-                <Link to="/dashboard" className="btn btn-dark driver-dash-link">
-                  Driver Dash
+                <Link to="/driverdash" className="btn btn-dark driver-dash-link">
+                  Dashboard
                 </Link>
               </li>
             </ul>
