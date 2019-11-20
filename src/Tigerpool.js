@@ -53,17 +53,12 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["driver"]} path="/ride-requests-1">
                 <ViewRequests />
               </PrivateRoute>
-
 			        <PrivateRoute roles={["admin"]} path="/larry-app">
                 <DriverApplicationLarry />
               </PrivateRoute>
-
-
               <PrivateRoute roles={["driver"]} path="/driverdash-noaccount">
                 <DriverDashNoAccount />
               </PrivateRoute>
-
-
               <PrivateRoute roles={["admin"]} path="/bob-app">
                 <DriverApplicationBob />
               </PrivateRoute>
