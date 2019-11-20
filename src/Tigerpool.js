@@ -11,7 +11,7 @@ import TripDetails from './pages/TripDetails'
 import RideSearch from './pages/RideSearch'
 import RateDriver from './pages/RateDriver';
 import ViewRequests from './pages/ViewRequests';
-import Success from './pages/Success';
+import RideSuccess from './pages/RideSuccess';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
 import DriverApplicationLarry from './pages/DriverApplicationLarry';
@@ -42,8 +42,8 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["rider"]} path="/rate">
                 <RateDriver />
               </PrivateRoute>
-              <PrivateRoute roles={["rider"]} path="/success">
-                <Success />
+              <PrivateRoute roles={["rider"]} path="/ridesuccess">
+                <RideSuccess />
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
@@ -54,7 +54,7 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["driver"]} path="/ride-requests-1">
                 <ViewRequests />
               </PrivateRoute>
-			        <PrivateRoute roles={["admin"]} path="/larry-app">
+              <PrivateRoute roles={["admin"]} path="/larry-app">
                 <DriverApplicationLarry />
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/bob-app">
