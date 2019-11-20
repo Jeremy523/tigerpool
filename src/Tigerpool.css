@@ -196,11 +196,11 @@
   text-decoration-line: none
 }
 
-.card-title {
+.form-card-title {
   font-weight: bold;
   font-size: x-large;
 }
 
-.card-row {
+.form-card-row {
   margin: 75px 0;
 }
