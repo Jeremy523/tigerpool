@@ -17,6 +17,7 @@ import PrivateRoute from './components/PrivateRoute';
 import DriverApplicationLarry from './pages/DriverApplicationLarry';
 import DriverApplicationBob from './pages/DriverApplicationBob';
 import DriverDash from './pages/DriverDash';
+import SearchResults from './pages/SearchResults';
 
 class Tigerpool extends React.Component {
 
@@ -35,6 +36,9 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
                 <Home />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider", "driver"]} path="/listings">
+                <SearchResults />
               </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} path="/trip">
                 <TripDetails />
