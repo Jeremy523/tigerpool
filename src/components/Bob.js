@@ -3,7 +3,7 @@ import Bobby from '../media/Bob.png'
 
 const Bob = () => {
   return (
-    <div className="card" style={{'width': '18rem'}}>
+    <div className="card" style={{'width': '18rem', 'margin': '2rem'}}>
       <img className="card-img-top" src={Bobby} />
       <div className="card-body text-center">
         <h5 className="card-title"><strong>Big City Bob</strong></h5>

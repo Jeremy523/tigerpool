@@ -11,7 +11,7 @@ import TripDetails from './pages/TripDetails'
 import RideSearch from './pages/RideSearch'
 import RateDriver from './pages/RateDriver';
 import ViewRequests from './pages/ViewRequests';
-import Success from './pages/Success';
+import RideSuccess from './pages/RideSuccess';
 import { Animated } from "react-animated-css";
 import PrivateRoute from './components/PrivateRoute';
 import RegisterDriver from './pages/RegisterDriver';
@@ -46,6 +46,9 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["rider"]} path="/rate">
                 <RateDriver />
               </PrivateRoute>
+              <PrivateRoute roles={["rider"]} path="/ridesuccess">
+                <RideSuccess />
+              </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
               </PrivateRoute>
@@ -63,7 +66,7 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <Route component={Page404} />
             </Switch>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </Animated>
