@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card } from 'reactstrap';
+import { Card, CardTitle, Row, Col } from 'reactstrap';
 
-class CenteredCard extends React.Component {
-    constructor() {
-        super();
-    }
-
-    render() {
-        return (
-            <Card></Card>
-        );
-    }
-}
+const CenteredCard = ({ children, title: title }) => (
+    <Row className="card-row">
+        <Col sm="3"></Col>
+        <Col sm="6">
+            <Card body>
+                <CardTitle className="card-title">{title}</CardTitle>
+                {children}
+            </Card>
+        </Col>
+        <Col sm="3"></Col>
+    </Row>
+);
 
 export default CenteredCard;
