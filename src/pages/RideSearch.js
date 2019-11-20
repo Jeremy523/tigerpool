@@ -44,7 +44,7 @@ class RideSearch extends React.Component {
                                 <input type="date" class="form-control" required onChange={e => this.handleDateChange(e.currentTarget.value)} aria-describedby="basic-addon1" />
                                 <div class="input-group-append">
                                     <span class="input-group-text" >
-                                        📅
+                                    <i class="material-icons">calendar_today</i>
                                  </span>
                                 </div>
                             </div>
@@ -54,7 +54,8 @@ class RideSearch extends React.Component {
                                 <input type="location" class="form-control" required onChange={e => this.handleStartChange(e.currentTarget.value)} value={this.state.startLocation} aria-describedby="basic-addon1" />
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        🗺️
+                                    <i class="material-icons">my_location</i>
+
                                  </span>
                                 </div>
                             </div>
@@ -68,7 +69,7 @@ class RideSearch extends React.Component {
                                     <input type="time" class="form-control" required value={this.state.startTime} onChange={e => this.handleTimeChange(e.currentTarget.value)} aria-describedby="basic-addon1" />
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="basic-addon1">
-                                            🕒
+                                        <i class="material-icons">access_time</i>
                                 </span>
                                     </div>
                                 </div>
@@ -78,7 +79,8 @@ class RideSearch extends React.Component {
                                         <input type="location" class="form-control" required value={this.state.endLocation} onChange={e => this.handleEndChange(e.currentTarget.value)} aria-describedby="basic-addon1" />
                                         <div class="input-group-append">
                                             <span class="input-group-text" >
-                                                🗺️
+                                            <i class="material-icons">map</i>
+
                                  </span>
                                         </div>
                                     </div>
