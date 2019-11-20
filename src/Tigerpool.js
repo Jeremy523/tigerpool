@@ -17,6 +17,8 @@ import PrivateRoute from './components/PrivateRoute';
 import DriverApplicationLarry from './pages/DriverApplicationLarry';
 import DriverApplicationBob from './pages/DriverApplicationBob';
 import DriverDash from './pages/DriverDash';
+import driverdashNoAccount from './pages/DriverDashNoAccount';
+import DriverDashNoAccount from './pages/DriverDashNoAccount';
 
 class Tigerpool extends React.Component {
 
@@ -51,9 +53,17 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["driver"]} path="/ride-requests-1">
                 <ViewRequests />
               </PrivateRoute>
+
 			        <PrivateRoute roles={["admin"]} path="/larry-app">
                 <DriverApplicationLarry />
               </PrivateRoute>
+
+
+              <PrivateRoute roles={["driver"]} path="/driverdash-noaccount">
+                <DriverDashNoAccount />
+              </PrivateRoute>
+
+
               <PrivateRoute roles={["admin"]} path="/bob-app">
                 <DriverApplicationBob />
               </PrivateRoute>
