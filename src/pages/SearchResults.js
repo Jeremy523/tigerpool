@@ -10,26 +10,7 @@ class SearchResults extends React.Component {
         startLocation: "Rochester Institute of Technology",
         endLocation: "Destination"
     };
-    handleDateChange = date => {
-        this.setState({
-            startDate: date
-        })
-    }
-    handleTimeChange = time => {
-        this.setState({
-            startTime: time
-        })
-    }
-    handleStartChange = loc => {
-        this.setState({
-            startLocation: loc
-        })
-    }
-    handleEndChange = loc => {
-        this.setState({
-            endLocation: loc
-        })
-    }
+
     render() {
         const exampleJson = {
             "trip1": {
