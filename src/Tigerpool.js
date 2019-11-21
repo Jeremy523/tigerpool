@@ -18,6 +18,9 @@ import RegisterDriver from './pages/RegisterDriver';
 import DriverApplicationLarry from './pages/DriverApplicationLarry';
 import DriverApplicationBob from './pages/DriverApplicationBob';
 import DriverDash from './pages/DriverDash';
+import RegisterSuccess from './pages/RegisterSuccess';
+import RestrictedGoHome from './pages/RestrictedGoHome';
+import Restricted404 from './pages/Restricted404';
 
 class Tigerpool extends React.Component {
 
@@ -31,10 +34,11 @@ class Tigerpool extends React.Component {
               <Route exact path="/login" component={LoginPanel} />
               <Route exact path="/adminlogin" component={AdminLogin} />
               <Route exact path="/studentlogin" component={StudentLogin} />
+              <Route exact path="/restricted" component={RestrictedGoHome} />
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/search">
                 <RideSearch />
               </PrivateRoute>
-              <PrivateRoute roles={["rider", "driver"]} exact strict path="/">
+              <PrivateRoute roles={["rider", "driver"]} redirect="/login" exact strict path="/">
                 <Home />
               </PrivateRoute>
               <PrivateRoute roles={["rider"]} path="/register">
@@ -48,6 +52,9 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["rider"]} path="/ridesuccess">
                 <RideSuccess />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider"]} path="/registersuccess">
+                <RegisterSuccess />
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/admindash">
                 <AdminDash />
@@ -64,7 +71,10 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["admin"]} path="/bob-app">
                 <DriverApplicationBob />
               </PrivateRoute>
-              <Route component={Page404} />
+              <PrivateRoute roles={["driver"]} redirect="/register" path="/create">
+                <Restricted404 />
+              </PrivateRoute>
+              <Route component={Restricted404} />
             </Switch>
             {/* <Footer /> */}
           </div>
@@ -73,17 +83,6 @@ class Tigerpool extends React.Component {
     )
   }
 
-}
-
-function Page404() {
-  return (
-    <div className='alert alert-danger' role='alert'>
-      <p className='my-auto'>No page here - try
-      <Link className='alert-link' to='/adminlogin'> /adminlogin </Link>or
-      <Link className='alert-link' to='/'> /</Link>
-      </p>
-    </div>
-  );
 }
 
 function Footer() {
