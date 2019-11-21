@@ -32,10 +32,10 @@ const DriverApplicationLarry = () => {
 		  </div>
 	  
         </div>       
-		<a href="/admindash" className="btn btn-dark" style={{'margin-left':'450px','margin-bottom':'50px'}}>
+		<a href="/driver-confirm-success"className="btn btn-dark" style={{'margin-left':'450px','margin-bottom':'50px'}}>
                     Accept
         </a>
-		<a href="/admindash" className="btn btn-dark" style={{'margin-left':'10px','margin-bottom':'50px'}}>
+		<a href="/driver-confirm-success" className="btn btn-dark" style={{'margin-left':'10px','margin-bottom':'50px'}}>
                     Decline
         </a>
       </div>

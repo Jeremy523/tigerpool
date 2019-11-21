@@ -17,6 +17,7 @@ import PrivateRoute from './components/PrivateRoute';
 import DriverApplicationLarry from './pages/DriverApplicationLarry';
 import DriverApplicationBob from './pages/DriverApplicationBob';
 import DriverDash from './pages/DriverDash';
+import DriverConfirmSuccess from './pages/DriverConfirmSuccess.js';
 
 class Tigerpool extends React.Component {
 
@@ -59,6 +60,9 @@ class Tigerpool extends React.Component {
               </PrivateRoute>
               <PrivateRoute roles={["admin"]} path="/bob-app">
                 <DriverApplicationBob />
+              </PrivateRoute>
+			  <PrivateRoute roles={["admin"]} path="/driver-confirm-success">
+                <DriverConfirmSuccess />
               </PrivateRoute>
               <Route component={Page404} />
             </Switch>
