@@ -363,7 +363,7 @@ class RegisterDriver extends React.Component {
           <Row>
             <Col md={12} >
               {/* Can handle sending the filled-out form data to another page via props */}
-              <SubmitLink to={{ pathname: "/", state: { formData: this.handleSubmit() } }}
+              <SubmitLink to={{ pathname: "/registersuccess", state: { formData: this.handleSubmit() } }}
                 label="Submit Application"
                 enabled={this.state.formIsValid} />
             </Col>
