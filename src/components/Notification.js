@@ -9,7 +9,7 @@ const Notification = (props) => {
   let minutes = time.getMinutes();
   
   if (hours > 12) {
-    hours = time.getHours() - 12;
+    hours = hours - 12;
   }
   
   if (minutes < 10) {

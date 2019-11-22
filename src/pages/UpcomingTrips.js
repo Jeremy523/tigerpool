@@ -1,6 +1,4 @@
 import React from 'react';
-import Notification from '../components/Notification'
-
 
 class UpcomingTrips extends React.Component {
   
