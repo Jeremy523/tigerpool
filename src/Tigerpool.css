@@ -36,6 +36,7 @@
 .trip-details-container {
   width: 100%;
   align-items: center;
+  position: relative;
 }
 
 .trip-details-wrapper {
@@ -321,14 +322,13 @@
 .notification-link {
   position: absolute;
   top: 10px;
-  right: 140px;
+  right: 145px;
   border: 2px solid #ffffff;
   border-radius: 10px;
   outline: none;
   text-decoration: none;
   color: black;
   background-color: white;
-  text-align: center;
   transition: .25s;
   font-size: 14px;
 }
@@ -338,8 +338,19 @@
   transform: translateY(-3px);
 }
 
+.notification-text {
+  text-align: center;
+}
+
+.notification-time {
+  font-weight: 600;
+  color: #9d9d9d;
+  text-align: left;
+  font-size: 12px;
+}
+
 .notification-wrapper {
-  padding: 1rem 2rem;
+  padding: .5rem 1.5rem;
 }
 
 .upcoming_trips_component {

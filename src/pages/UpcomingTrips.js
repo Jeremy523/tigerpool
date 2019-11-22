@@ -3,32 +3,6 @@ import Notification from '../components/Notification'
 
 
 class UpcomingTrips extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      showNotification: false
-    }
-  }
-  
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        showNotification: true
-      })
-    }, 3000)
-  }
-  
-  renderNotification() {
-    if (this.state.showNotification) {
-      return (
-        <Notification 
-          text="You have a new notification."
-          cta="Click to view."
-          url="/rate"
-        />
-      )
-    }
-  }
   
   render() {
     
@@ -109,7 +83,6 @@ class UpcomingTrips extends React.Component {
             </div>
           </div>
         </div>
-        {this.renderNotification()}
       </div>
     )
   }
