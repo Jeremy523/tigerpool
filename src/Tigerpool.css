@@ -114,6 +114,13 @@
   padding-bottom: 20rem;
 }
 
+.restricted-header {
+  font-weight: bold;
+  font-size: 48px;
+  font-family: "Courier";
+  color: darkred;
+}
+
 .card-img-top {
   border-radius: 50%;
 }
@@ -210,6 +217,47 @@
 .spacer{
   margin: 5rem;
 }
+
+/* Driver Registration CSS START */
+.App-link {
+  text-decoration-line: none
+}
+
+.App-link:hover {
+  text-decoration-line: underline
+}
+
+.form-group {
+  width: 100%
+}
+
+.form-control {
+  border: 2px solid #ccc;
+  padding: 10px; 
+}
+
+.control-error {
+  border: 2px solid red;
+}
+
+.disabled-link {
+  pointer-events: none;
+  /* color: rgba(0,0,0,0.6) */
+}
+
+.disabled-link:hover {
+  text-decoration-line: none
+}
+
+.form-card-title {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.form-card-row {
+  margin: 75px 0;
+}
+/* Driver Registration CSS END */
 
 .search{
   display: flex;

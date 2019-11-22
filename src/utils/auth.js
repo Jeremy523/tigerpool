@@ -39,6 +39,14 @@ const auth = {
     return false;
   },
 
+  isLoggedInAtAll() {
+    if (sessionStorage)
+      return sessionStorage.length > 0;
+    if (localStorage)
+      return localStorage.length > 0;
+    return false;
+  },
+
   // ---------------------------------------------------
   /**
    * Remove an item from the used storage
