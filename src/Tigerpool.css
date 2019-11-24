@@ -36,6 +36,7 @@
 .trip-details-container {
   width: 100%;
   align-items: center;
+  position: relative;
 }
 
 .trip-details-wrapper {
@@ -283,7 +284,7 @@
 .rating > input { display: none; } 
 .rating > label:before { 
   margin: 5px;
-  font-size: 1.25em;
+  font-size: 2.5rem;
   font-family: FontAwesome;
   display: inline-block;
   content: "\f005";
@@ -303,9 +304,55 @@
 
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating:not(:checked) > label:hover ~ label {  /* hover previous stars in list */
+  cursor: pointer;
+  color: #FFD700;
+} 
 
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFD700;  } 
+.rating > input:checked ~ label:hover ~ label {
+  cursor: pointer;
+  color: #FFD700;
+} 
+
+/* Notification */
+
+.notification-link {
+  position: absolute;
+  top: 10px;
+  right: 145px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  outline: none;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  transition: .25s;
+  font-size: 14px;
+}
+
+.notification-link:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+.notification-text {
+  text-align: center;
+}
+
+.notification-time {
+  font-weight: 600;
+  color: #9d9d9d;
+  text-align: left;
+  font-size: 12px;
+}
+
+.notification-wrapper {
+  padding: .5rem 1.5rem;
+}
+
+.upcoming_trips_component {
+  position: relative;
+}
