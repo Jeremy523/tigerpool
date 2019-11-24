@@ -22,6 +22,7 @@ import DriverConfirmSuccess from './pages/DriverConfirmSuccess.js';
 import RegisterSuccess from './pages/RegisterSuccess';
 import RestrictedGoHome from './pages/RestrictedGoHome';
 import Restricted404 from './pages/Restricted404';
+import SearchResults from './pages/SearchResults';
 
 class Tigerpool extends React.Component {
 
@@ -38,6 +39,9 @@ class Tigerpool extends React.Component {
               <Route exact path="/restricted" component={RestrictedGoHome} />
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/search">
                 <RideSearch />
+              </PrivateRoute>
+              <PrivateRoute roles={["rider", "driver"]} exact strict path="/listings">
+                <SearchResults />
               </PrivateRoute>
               <PrivateRoute roles={["rider", "driver"]} redirect="/login" exact strict path="/">
                 <Home />
