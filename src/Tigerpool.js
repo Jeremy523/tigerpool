@@ -18,6 +18,7 @@ import RegisterDriver from './pages/RegisterDriver';
 import DriverApplicationLarry from './pages/DriverApplicationLarry';
 import DriverApplicationBob from './pages/DriverApplicationBob';
 import DriverDash from './pages/DriverDash';
+import DriverConfirmSuccess from './pages/DriverConfirmSuccess.js';
 import RegisterSuccess from './pages/RegisterSuccess';
 import RestrictedGoHome from './pages/RestrictedGoHome';
 import Restricted404 from './pages/Restricted404';
@@ -71,6 +72,10 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["admin"]} path="/bob-app">
                 <DriverApplicationBob />
               </PrivateRoute>
+			        <PrivateRoute roles={["admin"]} path="/driver-confirm-success">
+                <DriverConfirmSuccess />
+              </PrivateRoute>
+              <Route component={Page404} />
               <PrivateRoute roles={["driver"]} redirect="/register" path="/create">
                 <Restricted404 />
               </PrivateRoute>
