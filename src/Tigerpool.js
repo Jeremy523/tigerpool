@@ -75,7 +75,6 @@ class Tigerpool extends React.Component {
 			        <PrivateRoute roles={["admin"]} path="/driver-confirm-success">
                 <DriverConfirmSuccess />
               </PrivateRoute>
-              <Route component={Page404} />
               <PrivateRoute roles={["driver"]} redirect="/register" path="/create">
                 <Restricted404 />
               </PrivateRoute>
