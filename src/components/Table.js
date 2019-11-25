@@ -2,6 +2,10 @@ import React from 'react'
 
 const TripTable = () => {
   
+  function handleClick(e) {
+    e.preventDefault();
+  }
+  
   const riders = {
     "1": {
       "name": "Bob Ross",
@@ -9,7 +13,20 @@ const TripTable = () => {
       "averageRating": "5/5",
       "bags": "1",
       "destination": "Syracuse, NY",
-      "accepted": "Yes"
+      "accepted": (
+        <span>
+          <a href="#">
+            <i className="text-dark material-icons">
+              thumb_up
+            </i>
+          </a>
+          <a href="#">
+            <i className="text-dark material-icons">
+              thumb_down
+            </i>
+          </a>
+        </span>
+      )
     },
     "2": {
       "name": "Rick Ross",
@@ -25,7 +42,20 @@ const TripTable = () => {
       "averageRating": "4.5/5",
       "bags": "2",
       "destination": "Bronx, NY",
-      "accepted": "No"
+      "accepted": (
+        <span>
+          <a href="#">
+            <i className="text-dark material-icons">
+              thumb_up
+            </i>
+          </a>
+          <a href="#">
+            <i className="text-dark material-icons">
+              thumb_down
+            </i>
+          </a>
+        </span>
+      )
     },
     "4": {
       "name": "Diana Ross",

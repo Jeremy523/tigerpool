@@ -51,7 +51,7 @@ class DriverDash extends React.Component {
                   <h1 className="card-header"><strong></strong>{json['user1'].name}</h1>
                   <div className="card-body">
                     <div className="img" style={{ 'margin-bottom': '50px' }}>
-                      <img class="card-img-top" src={require('../media/Larry.png')} alt="Card image"></img>
+                      <img className="card-img-top" src={require('../media/Larry.png')} alt="Card image"></img>
                     </div>
                     <div className="text_box" style={{ display: 'inline-block', 'vertical-align': 'left' }}>
                       <p className="card-text" align="top" style={{ 'margin-top': '10px' }}><strong>Age: </strong>{json['user1'].age}</p>
@@ -65,8 +65,8 @@ class DriverDash extends React.Component {
               </div>
             </div>
             <div className="col">
-              <div class="row">
-                <div class="col text-center mb-3">
+              <div className="row">
+                <div className="col text-center mb-3">
                   <a href='/create' className="btn btn-dark">
                     Create New Listing
                   </a>
@@ -80,8 +80,8 @@ class DriverDash extends React.Component {
                   <p className="card-text"><strong>Departure: </strong>{json['trip1'].departure}</p>
                   <p className="card-text"><strong>Destination: </strong>{json['trip1'].destination}</p>
                   <p className="card-text"><strong>Spots Open: </strong>{json['trip1'].spotsOpen}</p>
-                  <div class="row">
-                    <div class="col text-center">
+                  <div className="row">
+                    <div className="col text-center">
                       <a href="/ride-requests-1" className="btn btn-dark">
                         View Ride Requests
                       </a>
@@ -97,8 +97,8 @@ class DriverDash extends React.Component {
                   <p className="card-text"><strong>Departure: </strong>{json['trip2'].departure}</p>
                   <p className="card-text"><strong>Destination: </strong>{json['trip2'].destination}</p>
                   <p className="card-text"><strong>Spots Open: </strong>{json['trip2'].spotsOpen}</p>
-                  <div class="row">
-                    <div class="col text-center">
+                  <div className="row">
+                    <div className="col text-center">
                       <a href="/ride-requests-1" className="btn btn-dark">
                         View Ride Requests
                       </a>

@@ -15,7 +15,7 @@ class TripDetails extends React.Component {
       this.setState({
         showNotification: true
       })
-    }, 3000)
+    }, 5000)
   }
   
   renderNotification() {

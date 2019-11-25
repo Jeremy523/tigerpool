@@ -4,9 +4,9 @@ import { Animated } from 'react-animated-css'
 
 const Notification = (props) => {
   
-  const time = new Date();
-  let hours = time.getHours();
-  let minutes = time.getMinutes();
+  const date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   
   if (hours > 12) {
     hours = hours - 12;
@@ -16,14 +16,14 @@ const Notification = (props) => {
     minutes = '0' + minutes;
   }
   
-  const string = hours + ':' + minutes
+  const time = hours + ':' + minutes
   
   return (
     <Animated animationInDuration="750">
-      <Link className="shadow notification-link" to={props.url}>
+      <Link className="shadow notification-link" to={ props.url }>
+        <div className="arrow-up" />
         <div className="notification-wrapper">
-          <div className="notification-time">{string}</div>
-          <div className="line"></div>
+          <div className="notification-time">{ time }</div>
           <div className="notification-text">
             <div>{props.text}</div>
             <div><strong>{props.cta}</strong></div>
