@@ -30,8 +30,7 @@ class Navbar extends React.Component {
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/notifications">Notifications</Link>
-
+                <Link className="nav-link" to="/notifications"><i class="material-icons">notifications</i></Link>
               </li>
               <li className="nav-item">
                 <Link to="/driverdash" className="btn btn-dark driver-dash-link">

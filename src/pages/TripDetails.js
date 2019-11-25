@@ -22,8 +22,8 @@ class TripDetails extends React.Component {
     if (this.state.showNotification) {
       return (
         <Notification 
-          text="You have a new notification!"
-          cta="Click to view!"
+          text="Ride complete!"
+          cta="Click to rate your driver!"
           url="/rate"
         />
       )
