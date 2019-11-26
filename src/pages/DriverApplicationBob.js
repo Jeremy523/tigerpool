@@ -32,12 +32,32 @@ const DriverApplicationBob = () => {
 		  </div>
 	  
         </div>       
-		<a href="/driver-confirm-success" className="btn btn-dark" style={{'margin-left':'450px','margin-bottom':'50px'}}>
-                    Accept
-        </a>
-		<a href="/driver-confirm-success" className="btn btn-dark" style={{'margin-left':'10px','margin-bottom':'50px'}}>
-                    Decline
-        </a>
+        <button type="button" className="btn btn-dark" data-toggle="modal" data-target=".myModal" style={{'margin-left':'450px','margin-bottom':'50px'}}>
+          Accept
+        </button>
+        <button type="button" className="btn btn-dark" data-toggle="modal" data-target=".myModal" style={{'margin-left':'10px','margin-bottom':'50px'}}>
+          Decline
+        </button>
+        
+        <div class="modal fade myModal" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLongTitle">Action Confirmation for Driver Application</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to do this?
+              </div>
+              <div class="modal-footer">
+                <a href="/driver-confirm-success" type="button" class="btn btn-dark px-4">Confirm</a>
+                <a href="/driver-confirm-success" type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 	  
     </div>

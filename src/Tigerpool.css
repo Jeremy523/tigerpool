@@ -6,13 +6,18 @@
 }
 
 .tigerpool-container {
-  
+  z-index: 1;
 }
 
 /* MOBILE-FIRST STYLES  */
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0,0,0,0.6);
 }
+
+#notification {
+  padding-bottom: 0;
+}
+
 
 .navbar-brand {
   display: block;
@@ -368,4 +373,15 @@
 
 .upcoming_trips_component {
   position: relative;
+}
+
+/* Modal */
+.modal-backdrop {
+  z-index: -1;
+  display: none;
+}
+
+.myModal {
+  background: rgba(0, 0, 0, 0.5);
+  
 }
