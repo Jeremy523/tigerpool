@@ -269,12 +269,19 @@
 .search{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly ;
+  justify-content: space-around;
+  max-width: 1080px;
+  margin: auto;
+}
 
+.search-items {
+  margin: 0 4rem;
 }
-.search-items{
-  flex-basis:20%;
+
+.input-item {
+  width: 600px;
 }
+
 .icon{
   object-fit: contain;
 }
@@ -383,5 +390,4 @@
 
 .myModal {
   background: rgba(0, 0, 0, 0.5);
-  
 }
