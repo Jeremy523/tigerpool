@@ -1,3 +1,4 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 /* GENERAL STYLES */
 .html {
@@ -5,13 +6,18 @@
 }
 
 .tigerpool-container {
-  
+  z-index: 1;
 }
 
 /* MOBILE-FIRST STYLES  */
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0,0,0,0.6);
 }
+
+#notification {
+  padding-bottom: 0;
+}
+
 
 .navbar-brand {
   display: block;
@@ -35,6 +41,7 @@
 .trip-details-container {
   width: 100%;
   align-items: center;
+  position: relative;
 }
 
 .trip-details-wrapper {
@@ -81,6 +88,57 @@
   justify-content: space-around;
   align-items: flex-end;
 }
+
+.larry-card-wrapper {
+  padding: 2rem;
+}
+
+.rate-driver-component {
+  height: 90vh;
+}
+
+.rate-driver-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.rate-driver-content {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 500px;
+}
+
+.success-component {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding-bottom: 20rem;
+}
+
+.restricted-header {
+  font-weight: bold;
+  font-size: 48px;
+  font-family: "Courier";
+  color: darkred;
+}
+
+.card-img-top {
+  border-radius: 50%;
+}
+
+.star {
+  color: #F6CF00;
+}
+
+.no-star {
+  color: #C4C4C4;
+}
+
 
 /* MEDIA QUERY BREAKPOINTS  */
 
@@ -166,15 +224,170 @@
   margin: 5rem;
 }
 
+/* Driver Registration CSS START */
+.App-link {
+  text-decoration-line: none
+}
+
+.App-link:hover {
+  text-decoration-line: underline
+}
+
+.form-group {
+  width: 100%
+}
+
+.form-control {
+  border: 2px solid #ccc;
+  padding: 10px; 
+}
+
+.control-error {
+  border: 2px solid red;
+}
+
+.disabled-link {
+  pointer-events: none;
+  /* color: rgba(0,0,0,0.6) */
+}
+
+.disabled-link:hover {
+  text-decoration-line: none
+}
+
+.form-card-title {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.form-card-row {
+  margin: 75px 0;
+}
+
+/* Driver Registration CSS END */
+
 .search{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly ;
+  justify-content: space-around;
+  max-width: 1080px;
+  margin: auto;
+}
 
+.search-items {
+  margin: 0 4rem;
 }
-.search-items{
-  flex-basis:20%;
+
+.input-item {
+  width: 600px;
 }
+
 .icon{
   object-fit: contain;
+}
+
+/* Rate Driver Stars */
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 2.5rem;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/* Highlight Stars */
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {  /* hover previous stars in list */
+  cursor: pointer;
+  color: #FFD700;
+} 
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  cursor: pointer;
+  color: #FFD700;
+} 
+
+/* Notificaiton Arrow */
+.arrow-up {
+  width: 0;
+  height: 0;
+  top: -7px;
+  right: 98px;
+  position: absolute;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #ffffff;
+}
+
+/* Notification */
+
+.notification-link {
+  position: absolute;
+  top: 10px;
+  right: 125px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  outline: none;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  transition: .25s;
+  font-size: 14px;
+}
+
+.notification-link:hover,
+.notification-link:focus {
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+.notification-time {
+  font-weight: 600;
+  color: #9d9d9d;
+  text-align: left;
+  font-size: 12px;
+}
+
+.notification-text {
+  text-align: left;
+}
+
+.notification-wrapper {
+  padding: .5rem 1.5rem;
+}
+
+.upcoming_trips_component {
+  position: relative;
+}
+
+/* Modal */
+.modal-backdrop {
+  z-index: -1;
+  display: none;
+}
+
+.myModal {
+  background: rgba(0, 0, 0, 0.5);
 }

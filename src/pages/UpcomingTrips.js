@@ -1,6 +1,6 @@
 import React from 'react';
 
-class UpcomingTrips extends React.Component {  
+class UpcomingTrips extends React.Component {
   
   render() {
     

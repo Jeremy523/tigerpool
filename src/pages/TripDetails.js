@@ -1,7 +1,34 @@
 import React from 'react'
 import Table from '../components/Table'
+import Notification from '../components/Notification'
 
 class TripDetails extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      showNotification: false
+    }
+  }
+  
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        showNotification: true
+      })
+    }, 5000)
+  }
+  
+  renderNotification() {
+    if (this.state.showNotification) {
+      return (
+        <Notification 
+          text="Ride complete!"
+          cta="Click to rate your driver!"
+          url="/rate"
+        />
+      )
+    }
+  }
   
   render() {
     
@@ -42,7 +69,8 @@ class TripDetails extends React.Component {
             </div>
           </div>
           <Table />
-        </div>        
+        </div>
+        {this.renderNotification()}
       </div>
     )
   }
