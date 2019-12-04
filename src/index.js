@@ -4,6 +4,6 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Tigerpool from './Tigerpool';
 
-ReactDOM.render(<Tigerpool />, document.getElementById('root'));
+ReactDOM.render(<Tigerpool basename={process.env.PUBLIC_URL} />, document.getElementById('root'));
 
 serviceWorker.unregister();

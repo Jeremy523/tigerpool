@@ -32,7 +32,7 @@ class Tigerpool extends React.Component {
   render() {
     return (
       <Animated animationIn="fadeIn">
-        <BrowserRouter>
+        <BrowserRouter basename={this.props.basename}>
           <Navbar ref="nav" />
           <div className="tigerpool-container">
             <Switch>
