@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tigerpool/static/css/main.9ec8d9c6.chunk.css",
-    "main.js": "/tigerpool/static/js/main.b6961f52.chunk.js",
-    "main.js.map": "/tigerpool/static/js/main.b6961f52.chunk.js.map",
+    "main.js": "/tigerpool/static/js/main.9d580b83.chunk.js",
+    "main.js.map": "/tigerpool/static/js/main.9d580b83.chunk.js.map",
     "runtime-main.js": "/tigerpool/static/js/runtime-main.f1e80453.js",
     "runtime-main.js.map": "/tigerpool/static/js/runtime-main.f1e80453.js.map",
-    "static/js/2.1d4c7752.chunk.js": "/tigerpool/static/js/2.1d4c7752.chunk.js",
-    "static/js/2.1d4c7752.chunk.js.map": "/tigerpool/static/js/2.1d4c7752.chunk.js.map",
+    "static/js/2.d4cf6acb.chunk.js": "/tigerpool/static/js/2.d4cf6acb.chunk.js",
+    "static/js/2.d4cf6acb.chunk.js.map": "/tigerpool/static/js/2.d4cf6acb.chunk.js.map",
     "index.html": "/tigerpool/index.html",
-    "precache-manifest.33de51dabe0054aa5aeacc7aacead471.js": "/tigerpool/precache-manifest.33de51dabe0054aa5aeacc7aacead471.js",
+    "precache-manifest.5b6277647cd7c62605700dbd2ca73c41.js": "/tigerpool/precache-manifest.5b6277647cd7c62605700dbd2ca73c41.js",
     "service-worker.js": "/tigerpool/service-worker.js",
     "static/css/main.9ec8d9c6.chunk.css.map": "/tigerpool/static/css/main.9ec8d9c6.chunk.css.map",
     "static/media/Bob.png": "/tigerpool/static/media/Bob.20d5246d.png",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f1e80453.js",
-    "static/js/2.1d4c7752.chunk.js",
+    "static/js/2.d4cf6acb.chunk.js",
     "static/css/main.9ec8d9c6.chunk.css",
-    "static/js/main.b6961f52.chunk.js"
+    "static/js/main.9d580b83.chunk.js"
   ]
 }
