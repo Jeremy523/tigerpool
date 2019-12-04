@@ -27,16 +27,20 @@ import SearchResults from './pages/SearchResults';
 
 class Tigerpool extends React.Component {
 
+  update = () => this.forceUpdate();
+
   render() {
     return (
       <Animated animationIn="fadeIn">
         <BrowserRouter>
-          <Navbar />
+          <Navbar ref="nav" />
           <div className="tigerpool-container">
             <Switch>
               <Route exact path="/login" component={LoginPanel} />
               <Route exact path="/adminlogin" component={AdminLogin} />
-              <Route exact path="/studentlogin" component={StudentLogin} />
+              <Route exact path="/studentlogin">
+                <StudentLogin updateFunc={this.update} />
+              </Route>
               <Route exact path="/restricted" component={RestrictedGoHome} />
               <PrivateRoute roles={["rider", "driver"]} exact strict path="/search">
                 <RideSearch />
@@ -80,7 +84,7 @@ class Tigerpool extends React.Component {
               <PrivateRoute roles={["admin"]} path="/bob-app">
                 <DriverApplicationBob />
               </PrivateRoute>
-			        <PrivateRoute roles={["admin"]} path="/driver-confirm-success">
+              <PrivateRoute roles={["admin"]} path="/driver-confirm-success">
                 <DriverConfirmSuccess />
               </PrivateRoute>
               <PrivateRoute roles={["driver"]} redirect="/register" path="/create">

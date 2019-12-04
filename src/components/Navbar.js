@@ -1,7 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import auth from '../utils/auth';
+
 class Navbar extends React.Component {
+
+  dashboardOrRegisterLink = _ => {
+    let isDriver = auth.isLoggedInAs(["driver"]);
+    return isDriver
+      ? (<Link className="nav-link hidden" to="/driverdash">Dashboard</Link>)
+      : (<Link className="nav-link hidden" to="/register">Register</Link>);
+  };
+
+  dashboardOrRegisterBtn = _ => {
+    let isDriver = auth.isLoggedInAs(["driver"]);
+    return isDriver
+      ? (<Link to="/driverdash" className="btn btn-dark driver-dash-link">Dashboard</Link>)
+      : (<Link to="/register" className="btn btn-dark driver-dash-link">Register</Link>);
+  };
+
+  update = _ => this.forceUpdate();
 
   render() {
     return (
@@ -24,7 +42,7 @@ class Navbar extends React.Component {
               <Link className="nav-link hidden" to="/notifications">Notifications</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link hidden" to="/driverdash">Dashboard</Link>
+              {this.dashboardOrRegisterLink()}
             </li>
           </ul>
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
@@ -33,9 +51,7 @@ class Navbar extends React.Component {
                 <Link className="nav-link" id="notification" to="/notifications"><i class="material-icons">notifications</i></Link>
               </li>
               <li className="nav-item">
-                <Link to="/driverdash" className="btn btn-dark driver-dash-link">
-                  Dashboard
-                </Link>
+                {this.dashboardOrRegisterBtn()}
               </li>
             </ul>
           </div>

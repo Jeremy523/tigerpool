@@ -69,6 +69,7 @@ class StudentLogin extends React.Component {
         auth.loginAsDriver();
       else if (isLoggedInRider)
         auth.loginAsRider();
+      this.props.updateFunc && this.props.updateFunc();
       return <Redirect to="/" />
     }
 
