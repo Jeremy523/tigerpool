@@ -50,7 +50,7 @@ class SearchResults extends React.Component {
                                 <div class="row">
                                     <div class="col text-center">
                                         <a href="/trip" className="btn btn-dark">
-                                            View Trip Details
+                                            Apply To Trip
                                     </a>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@ class SearchResults extends React.Component {
                                 <div class="row">
                                     <div class="col text-center">
                                         <a href="/trip" className="btn btn-dark">
-                                            View Trip Details
+                                            Apply To Trip
                                     </a>
                                     </div>
                                 </div>

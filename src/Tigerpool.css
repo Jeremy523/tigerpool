@@ -89,7 +89,7 @@
   align-items: flex-end;
 }
 
-.larry-card-wrapper {
+.card-wrapper {
   padding: 2rem;
 }
 
@@ -275,11 +275,11 @@
 }
 
 .search-items {
-  margin: 0 4rem;
+  margin: 0;
 }
 
 .input-item {
-  width: 600px;
+  width: 450px;
 }
 
 .icon{

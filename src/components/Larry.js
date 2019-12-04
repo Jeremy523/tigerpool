@@ -4,7 +4,7 @@ import Boyfriend from '../media/Larry.png'
 const Larry = () => {
   return (
     <div className="card" style={{'width': '18rem', 'margin': '2rem'}}>
-      <div className="larry-card-wrapper">
+      <div className="card-wrapper">
         <img className="card-img-top" src={Boyfriend} />
         <div className="card-body text-center">
           <h5 className="card-title"><strong>Smalltown Larry</strong></h5>
